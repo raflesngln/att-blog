@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">shop_habib</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="produk_master" view="colnames">
+<left>29</left>
+<top>20</top>
+<width>270</width>
+<height>419</height>
+<sql_create_table>CREATE TABLE `produk_master` (
+  `id_produk` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `id_kategori` int(10) NOT NULL,
+  `nm_produk` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `warna_produk` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `model_produk` varchar(30) CHARACTER SET latin1 NOT NULL,
+  `merk_produk` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `bahan_produk` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `harga_produk` double NOT NULL,
+  `diskon_produk` int(11) NOT NULL,
+  `stok_produk` int(5) NOT NULL,
+  `ket_produk` text CHARACTER SET latin1 NOT NULL,
+  `tgl_simpan` datetime NOT NULL,
+  PRIMARY KEY (`id_produk`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="produk_kategori" view="colnames">
+<left>344</left>
+<top>17</top>
+<width>223</width>
+<height>347</height>
+<sql_create_table>CREATE TABLE `produk_kategori` (
+  `id_kategori` bigint(20) NOT NULL AUTO_INCREMENT,
+  `nm_kategori` varchar(50) NOT NULL,
+  `ket_kategori` text NOT NULL,
+  `id_gender` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_kategori`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="produk_gender" view="colnames">
+<left>639</left>
+<top>21</top>
+<width>176</width>
+<height>166</height>
+<sql_create_table>CREATE TABLE `produk_gender` (
+  `id_gender` int(10) NOT NULL AUTO_INCREMENT,
+  `nama_gender` varchar(150) DEFAULT NULL,
+  `ket` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id_gender`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="produk_gambar" view="colnames">
+<left>511</left>
+<top>471</top>
+<width>191</width>
+<height>276</height>
+<sql_create_table>CREATE TABLE `produk_gambar` (
+  `id_gambar` int(10) NOT NULL AUTO_INCREMENT,
+  `id_produk` varchar(15) NOT NULL,
+  `gambar_produk` varchar(500) NOT NULL,
+  `gambar1` varchar(500) NOT NULL,
+  `gambar2` varchar(500) NOT NULL,
+  `gambar3` varchar(500) NOT NULL,
+  `gambar4` varchar(500) NOT NULL,
+  `tgl_upload` datetime NOT NULL,
+  PRIMARY KEY (`id_gambar`)
+) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
